@@ -68,9 +68,9 @@ export function MobileNav() {
             </Link>
           ))}
         </nav>
-        {/* <div className="">
+        <div className="">
             <UserNav />
-        </div> */}
+        </div>
         </div>
       </SheetContent>
     </Sheet>

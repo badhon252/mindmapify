@@ -1,3 +1,6 @@
+import { DashboardNav } from '@/components/dashboard/nav';
+import { UserNav } from '@/components/dashboard/user-nav';
+
 export default function DashboardLayout({
   children,
 }: {

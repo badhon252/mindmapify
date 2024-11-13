@@ -13,7 +13,9 @@ export default function DashboardLayout({
       <MainNav />
       <div className="flex-1">
           <MobileNav />
-        
+        <header className="h-16 border-b flex items-center justify-between px-4">
+          
+        </header>
         <main className="p-8">
           <PageTransition>{children}</PageTransition>
         </main>

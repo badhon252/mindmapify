@@ -7,7 +7,6 @@ import { Menu, Brain } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { UserNav } from '../dashboard/user-nav';
 
 const navItems = [
   {
@@ -44,13 +43,11 @@ export function MobileNav() {
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-64 p-1">
+      <SheetContent side="left" className="w-64 p-0">
         <div className="flex items-center gap-2 p-6 border-b">
           <Brain className="h-6 w-6 text-primary" />
           <span className="font-semibold text-xl">MindMapify</span>
         </div>
-        <div className="h-fit flex flex-col justify-between ">
-
         <nav className="p-2">
           {navItems.map((item) => (
             <Link
@@ -68,10 +65,6 @@ export function MobileNav() {
             </Link>
           ))}
         </nav>
-        {/* <div className="">
-            <UserNav />
-        </div> */}
-        </div>
       </SheetContent>
     </Sheet>
   );

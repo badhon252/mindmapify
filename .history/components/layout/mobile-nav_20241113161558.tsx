@@ -49,7 +49,7 @@ export function MobileNav() {
           <Brain className="h-6 w-6 text-primary" />
           <span className="font-semibold text-xl">MindMapify</span>
         </div>
-        <div className="h-fit flex flex-col justify-between ">
+        <div className="flex">
 
         <nav className="p-2">
           {navItems.map((item) => (
@@ -68,10 +68,10 @@ export function MobileNav() {
             </Link>
           ))}
         </nav>
-        {/* <div className="">
+        <div className="">
             <UserNav />
-        </div> */}
         </div>
+          </div>
       </SheetContent>
     </Sheet>
   );

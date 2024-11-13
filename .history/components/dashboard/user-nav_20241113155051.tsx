@@ -8,6 +8,7 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import img from '@/public/assets/user.jpg'
 
 export function UserNav() {
   return (
@@ -15,7 +16,7 @@ export function UserNav() {
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full left-0">
           <Avatar className="h-8 w-8">
-            <AvatarImage src="/public/assets/user.jpg" alt="@username" />
+            <AvatarImage src="@/public/assets/user.jpg" alt="@username" />
             <AvatarFallback>U</AvatarFallback>
           </Avatar>
         </Button>
