@@ -1,34 +1,34 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Button } from '@/components/ui/button';
-import { Menu, Brain } from 'lucide-react';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
-import { UserNav } from '../dashboard/user-nav';
+import { useState } from "react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Menu, Brain } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { UserNav } from "../dashboard/user-nav";
 
 const navItems = [
   {
-    title: 'Dashboard',
-    href: '/dashboard',
+    title: "Dashboard",
+    href: "/dashboard",
   },
   {
-    title: 'Knowledge Maps',
-    href: '/dashboard/mindmaps',
+    title: "Knowledge Maps",
+    href: "/dashboard/mindmaps",
   },
   {
-    title: 'Content Library',
-    href: '/dashboard/library',
+    title: "Content Library",
+    href: "/dashboard/library",
   },
   {
-    title: 'Analytics',
-    href: '/dashboard/analytics',
+    title: "Analytics",
+    href: "/dashboard/analytics",
   },
   {
-    title: 'Settings',
-    href: '/dashboard/settings',
+    title: "Settings",
+    href: "/dashboard/settings",
   },
 ];
 
@@ -50,25 +50,24 @@ export function MobileNav() {
           <span className="font-semibold text-xl">MindMapify</span>
         </div>
         <div className="h-fit flex flex-col justify-between ">
-
-        <nav className="p-2">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className={cn(
-                'flex items-center px-3 py-2 rounded-lg transition-colors',
-                pathname === item.href
-                  ? 'bg-primary/10 text-primary'
-                  : 'text-muted-foreground hover:text-foreground hover:bg-accent'
-              )}
-            >
-              {item.title}
-            </Link>
-          ))}
-        </nav>
-        {/* <div className="">
+          <nav className="p-2">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "flex items-center px-3 py-2 rounded-lg transition-colors",
+                  pathname === item.href
+                    ? "bg-primary/10 text-primary"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                )}
+              >
+                {item.title}
+              </Link>
+            ))}
+          </nav>
+          {/* <div className="">
             <UserNav />
         </div> */}
         </div>

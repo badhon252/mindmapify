@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { cn } from '@/lib/utils';
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 import {
   Brain,
   LayoutDashboard,
@@ -11,38 +11,46 @@ import {
   Library,
   BarChart2,
   Settings,
-  Users
-} from 'lucide-react';
-import { UserNav } from '../dashboard/user-nav';
+  Users,
+  InspectIcon,
+  AtomIcon,
+} from "lucide-react";
+import { UserNav } from "../dashboard/user-nav";
 
 const navItems = [
   {
-    title: 'Dashboard',
-    href: '/dashboard',
+    title: "Dashboard",
+    href: "/dashboard",
     icon: LayoutDashboard,
   },
   {
-    title: 'Knowledge Maps',
-    href: '/dashboard/mindmaps',
+    title: "Knowledge Maps",
+    href: "/dashboard/mindmaps",
     icon: Map,
   },
   {
-    title: 'Content Library',
-    href: '/dashboard/library',
+    title: "Content Library",
+    href: "/dashboard/library",
     icon: Library,
   },
   {
-    title: 'Analytics',
-    href: '/dashboard/analytics',
+    title: "AI Insight",
+    href: "/dashboard/insight",
+    icon: AtomIcon,
+  },
+  {
+    title: "Analytics",
+    href: "/dashboard/analytics",
     icon: BarChart2,
-  },{
-    title: 'Collaboration',
-    href: '/dashboard/collaboration',
+  },
+  {
+    title: "Collaboration",
+    href: "/dashboard/collaboration",
     icon: Users,
   },
   {
-    title: 'Settings',
-    href: '/dashboard/settings',
+    title: "Settings",
+    href: "/dashboard/settings",
     icon: Settings,
   },
 ];
@@ -54,10 +62,11 @@ export function MainNav() {
     <div className="hidden md:flex flex-col w-64 bg-background border-r min-h-screen p-6">
       <div className="flex items-center gap-2 mb-8">
         <Brain className="h-6 w-6 text-primary" />
-        <Link href='/' className="font-semibold text-xl">MindMapify</Link>
+        <Link href="/" className="font-semibold text-xl">
+          MindMapify
+        </Link>
       </div>
       <div className="flex flex-col justify-between items-end h-fit">
-
         <nav className="space-y-2">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
@@ -66,8 +75,10 @@ export function MainNav() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'flex items-center gap-3 px-3 py-2 rounded-lg relative group transition-colors',
-                  isActive ? 'text-primary' : 'text-muted-foreground hover:text-foreground'
+                  "flex items-center gap-3 px-3 py-2 rounded-lg relative group transition-colors",
+                  isActive
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
               >
                 {isActive && (
@@ -76,7 +87,7 @@ export function MainNav() {
                     className="absolute inset-0 bg-primary/10 rounded-lg"
                     initial={false}
                     transition={{
-                      type: 'spring',
+                      type: "spring",
                       stiffness: 500,
                       damping: 30,
                     }}
@@ -90,10 +101,10 @@ export function MainNav() {
         </nav>
 
         <footer className="h-16 border-t flex items-center justify-between px-4">
-            <div className="flex items-center gap-4">
-              <UserNav />
-            </div>
-          </footer>
+          <div className="flex items-center gap-4">
+            <UserNav />
+          </div>
+        </footer>
       </div>
     </div>
   );
